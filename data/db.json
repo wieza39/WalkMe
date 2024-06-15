@@ -1,0 +1,210 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "johnDoe",
+      "password": "securePassword123",
+      "basicInfo": {
+        "name": "John",
+        "surname": "Doe",
+        "email": "john@example.com",
+        "telephone": "+123456789",
+        "location": "New York",
+        "photo": "path/to/photo.jpg"
+      },
+      "roles": ["user", "sitter"],
+      "pets": [
+        {
+          "id": 1,
+          "name": "Buddy",
+          "type": "dog",
+          "size": "small",
+          "age": 3,
+          "description": "Friendly golden retriever.",
+          "knownCommands": ["sit", "stay", "come"],
+          "frequencyOfWalksNeeded": "twice a day",
+          "typeOfActivity": "high"
+        },
+        {
+          "id": 2,
+          "name": "Whiskers",
+          "type": "cat",
+          "size": "small",
+          "age": 2,
+          "description": "Curious and playful.",
+          "knownCommands": [],
+          "frequencyOfWalksNeeded": "none",
+          "typeOfActivity": "medium"
+        }
+      ],
+      "sitterInfo": {
+        "services" : ["walk", "feed"],
+        "ratings": [
+          {
+            "id": 1,
+            "rating": 5,
+            "comment": "Excellent sitter! Took great care of my dog.",
+            "userId": 2
+          },
+          {
+            "id": 2,
+            "rating": 4,
+            "comment": "Very good, but a bit late for the appointment.",
+            "userId": 3
+          }
+        ],
+        "unavailability": [
+          {
+            "id": 1,
+            "date": "2024-06-20"
+          },
+          {
+            "id": 2,
+            "date": "2024-06-21"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "username": "janeDoe",
+      "password": "anotherSecurePassword",
+      "basicInfo": {
+        "name": "Jane",
+        "surname": "Doe",
+        "email": "jane@example.com",
+        "telephone": "+987654321",
+        "location": "Los Angeles",
+        "photo": "path/to/photo2.jpg"
+      },
+      "roles": ["user", "sitter"],
+      "pets": [
+        {
+          "id": 3,
+          "name": "Max",
+          "type": "dog",
+          "size": "medium",
+          "age": 4,
+          "description": "Energetic border collie.",
+          "knownCommands": ["sit", "fetch", "stay"],
+          "frequencyOfWalksNeeded": "three times a day",
+          "typeOfActivity": "high"
+        }
+      ],
+      "sitterInfo": {
+        "services" : ["feed", "stay", "take"],
+        "ratings": [
+          {
+            "id": 3,
+            "rating": 5,
+            "comment": "Jane was fantastic with my dog.",
+            "userId": 1
+          },
+          {
+            "id": 4,
+            "rating": 4,
+            "comment": "Great sitter, very attentive.",
+            "userId": 3
+          }
+        ],
+        "unavailability": [
+          {
+            "id": 3,
+            "date": "2024-07-01"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "username": "aliceSmith",
+      "password": "yetAnotherSecurePassword",
+      "basicInfo": {
+        "name": "Alice",
+        "surname": "Smith",
+        "email": "alice@example.com",
+        "telephone": "+123098456",
+        "location": "Chicago",
+        "photo": "path/to/photo3.jpg"
+      },
+      "roles": ["user"],
+      "pets": [
+        {
+          "id": 4,
+          "name": "Charlie",
+          "type": "cat",
+          "size": "medium",
+          "age": 1,
+          "description": "Playful kitten.",
+          "knownCommands": [],
+          "frequencyOfWalksNeeded": "none",
+          "typeOfActivity": "low"
+        },
+        {
+          "id": 5,
+          "name": "Nibbles",
+          "type": "caged",
+          "size": "medium",
+          "age": 2,
+          "description": "Active hamster.",
+          "knownCommands": [],
+          "frequencyOfWalksNeeded": "none",
+          "typeOfActivity": "low"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "text": "Excellent sitter! Took great care of my dog.",
+      "sitterId": 1,
+      "userId": 2,
+      "date": "2023-06-01"
+    },
+    {
+      "id": 2,
+      "text": "Very good, but a bit late for the appointment.",
+      "sitterId": 1,
+      "userId": 3,
+      "date": "2023-06-10"
+    },
+    {
+      "id": 3,
+      "text": "Jane was fantastic with my dog.",
+      "sitterId": 2,
+      "userId": 1,
+      "date": "2023-07-01"
+    },
+    {
+      "id": 4,
+      "text": "Great sitter, very attentive.",
+      "sitterId": 2,
+      "userId": 3,
+      "date": "2023-08-15"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "sitterId": 1,
+      "userId": 2,
+      "date": "2024-06-20",
+      "status": "booked"
+    },
+    {
+      "id": 2,
+      "sitterId": 1,
+      "userId": 3,
+      "date": "2024-06-21",
+      "status": "booked"
+    },
+    {
+      "id": 3,
+      "sitterId": 2,
+      "userId": 1,
+      "date": "2024-07-01",
+      "status": "booked"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+.search-container {
+  /* Styles for the whole search container */
+  .search-box-container {
+    /* Styles for the search panel part */
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .search-box {
+      // margin: 30px 50px;
+      padding: 5% 5%;
+      background-color: red;
+      // width: 80%;
+      height: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .input-field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .input {
+          width: 100%;
+          padding: 0.75rem;
+          margin: 4px 0;
+          border: 1px solid #e2e8f0;
+          border-radius: 0.375rem;
+          font-size: 0.875rem;
+          transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+          &:focus {
+            outline: none;
+            border-color: #5e60ce;
+            box-shadow: 0 0 0 3px rgba(95, 99, 206, 0.2);
+          }
+        }
+
+        .date-picker {
+          display: grid;
+          grid-template-columns: repeat(2, 160px); /* Two columns, each 150px wide */
+          gap: 10px;
+
+          .date-picker-input {
+
+          }
+        }
+
+        .service-choice {
+          display: grid;
+          margin-top: 10px;
+          grid-template-columns: repeat(2, 160px); /* Two columns, each 150px wide */
+          gap: 10px; /* Space between buttons */
+
+          .service-button {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out;
+
+          }
+
+          .service-selected {
+            background-color: #2eb5f8; /* Change background color on hover */
+          }
+        }
+
+        .pets-selection {
+          .pet-button {
+
+          }
+
+        }
+      }
+    }
+  }
+}
