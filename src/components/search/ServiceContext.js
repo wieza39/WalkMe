@@ -7,6 +7,7 @@ export const ServiceProvider = ({ children }) => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [serviceSelected, setServiceSelected] = useState([]);
+    const [petAmount, setPetAmount] = useState([]);
 
     return (
         <ServiceContext.Provider
@@ -18,7 +19,9 @@ export const ServiceProvider = ({ children }) => {
                 endDate,
                 setEndDate,
                 serviceSelected,
-                setServiceSelected
+                setServiceSelected,
+                petAmount,
+                setPetAmount
             }}
         >
             {children}

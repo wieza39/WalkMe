@@ -2,17 +2,17 @@
   /* Styles for the whole search container */
   .search-box-container {
     /* Styles for the search panel part */
-    height: 40vh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .search-box {
-      // margin: 30px 50px;
+      margin: 30px 50px;
       padding: 5% 5%;
       background-color: red;
-      // width: 80%;
+      //width: 80%;
       height: 70%;
       display: flex;
       align-items: center;
@@ -41,7 +41,7 @@
 
         .date-picker {
           display: grid;
-          grid-template-columns: repeat(2, 160px); /* Two columns, each 150px wide */
+          grid-template-columns: repeat(2, 160px);
           gap: 10px;
 
           .date-picker-input {
@@ -52,8 +52,8 @@
         .service-choice {
           display: grid;
           margin-top: 10px;
-          grid-template-columns: repeat(2, 160px); /* Two columns, each 150px wide */
-          gap: 10px; /* Space between buttons */
+          grid-template-columns: repeat(2, 160px);
+          gap: 10px;
 
           .service-button {
             width: 100%;
@@ -66,7 +66,7 @@
           }
 
           .service-selected {
-            background-color: #2eb5f8; /* Change background color on hover */
+            background-color: #2eb5f8;
           }
         }
 

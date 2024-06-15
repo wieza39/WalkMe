@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import Input from "../../elements/Input";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {Button} from "@mui/material";
+import {Button, FormControl, InputAdornment, InputLabel, TextField, MenuItem} from "@mui/material";
 import ServiceContext from "../ServiceContext";
 
 
@@ -16,9 +16,10 @@ export default function SearchBox() {
         endDate,
         setEndDate,
         serviceSelected,
-        setServiceSelected
+        setServiceSelected,
+        petAmount,
+        setPetAmount
     } = useContext(ServiceContext);
-
 
     const services = [
         {id: 1, name: "stay", icon: "fa-solid fa-house"},
@@ -28,9 +29,9 @@ export default function SearchBox() {
     ]
 
     const petType = [
-        {id: 1, name: "dog", icon: "fa-solid fa-dog"},
-        {id: 2, name: "cat", icon: "fa-solid fa-cat"},
-        {id: 3, name: "caged", icon: "fa-solid fa-fish"}
+        {id: 1, type: "dog", icon: "fa-solid fa-dog"},
+        {id: 2, type: "cat", icon: "fa-solid fa-cat"},
+        {id: 3, type: "caged", icon: "fa-solid fa-fish"}
     ]
 
     const toggleService = (serviceName) => {
@@ -43,6 +44,24 @@ export default function SearchBox() {
             }
         });
     };
+
+    const handlePetAmount = (event, pet) => {
+        const amount = event.target.value;
+        setPetAmount((prevAmounts) => {
+            const existingPetIndex = prevAmounts.findIndex(p => p.type === pet.type);
+            if (existingPetIndex !== -1) {
+                const updatedAmounts = [...prevAmounts];
+                updatedAmounts[existingPetIndex] = { ...updatedAmounts[existingPetIndex], amount };
+                return updatedAmounts;
+            } else {
+                return [...prevAmounts, { type: pet.type, amount }];
+            }
+        });
+    };
+
+
+
+    console.log(petAmount);
 
     return (
         <div className="search-box-container">
@@ -81,15 +100,31 @@ export default function SearchBox() {
                     </div>
                     <div className="pets-selection">
                         {petType.map((pet) => (
-                            <Button
-                                key={pet.id}
-                                className="pet-button"
-                                variant="contained"
-
-                            >
-                                <i className={pet.icon}></i>
-                            </Button>
-
+                            <FormControl key={pet.type} variant="outlined" fullWidth>
+                                <InputLabel className="pet-button"></InputLabel>
+                                <TextField
+                                    select
+                                    labelId={`pet-button-${pet.type}`}
+                                    className="pet-button-text"
+                                    value={petAmount.find(p => p.type === pet.type)?.amount || ''}
+                                    label={pet.name}
+                                    onChange={(event) => handlePetAmount(event, pet)}
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <i className={pet.icon}></i>
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                >
+                                    <MenuItem value={1}>1</MenuItem>
+                                    <MenuItem value={2}>2</MenuItem>
+                                    <MenuItem value={3}>3</MenuItem>
+                                    <MenuItem value={4}>4</MenuItem>
+                                    <MenuItem value={5}>5</MenuItem>
+                                    <MenuItem value={6}>6</MenuItem>
+                                </TextField>
+                            </FormControl>
                         ))}
                     </div>
                 </div>

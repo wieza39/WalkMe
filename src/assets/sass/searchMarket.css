@@ -3,13 +3,14 @@
 }
 .search-container .search-box-container {
   /* Styles for the search panel part */
-  height: 40vh;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .search-container .search-box-container .search-box {
+  margin: 30px 50px;
   padding: 5% 5%;
   background-color: red;
   height: 70%;
@@ -38,14 +39,14 @@
 }
 .search-container .search-box-container .search-box .input-field .date-picker {
   display: grid;
-  grid-template-columns: repeat(2, 160px); /* Two columns, each 150px wide */
+  grid-template-columns: repeat(2, 160px);
   gap: 10px;
 }
 .search-container .search-box-container .search-box .input-field .service-choice {
   display: grid;
   margin-top: 10px;
-  grid-template-columns: repeat(2, 160px); /* Two columns, each 150px wide */
-  gap: 10px; /* Space between buttons */
+  grid-template-columns: repeat(2, 160px);
+  gap: 10px;
 }
 .search-container .search-box-container .search-box .input-field .service-choice .service-button {
   width: 100%;
@@ -56,7 +57,7 @@
   transition: background-color 0.15s ease-in-out;
 }
 .search-container .search-box-container .search-box .input-field .service-choice .service-selected {
-  background-color: #2eb5f8; /* Change background color on hover */
+  background-color: #2eb5f8;
 }
 
 /*# sourceMappingURL=searchMarket.css.map */
