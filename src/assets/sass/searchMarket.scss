@@ -78,5 +78,28 @@
         }
       }
     }
+    }
+  .results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .sitter-small-profile {
+      width: 90%;
+      margin: 5% 5%;
+      display: flex;
+      flex-direction: row;
+
+      .sitter-info {
+
+
+        .sitter-photo {
+            width: 100px;
+
+          img {
+        }
+        }
+      }
+    }
   }
 }

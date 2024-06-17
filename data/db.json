@@ -10,7 +10,8 @@
         "email": "john@example.com",
         "telephone": "+123456789",
         "location": "New York",
-        "photo": "path/to/photo.jpg"
+        "photo": "https://img.freepik.com/darmowe-zdjecie/portret-mezczyzny-w-stylu-kreskowki_23-2151134033.jpg?t=st=1718655803~exp=1718659403~hmac=b848bb05548274a1d9c6ec4a8c1ba2fa51473b81923ea965f051d418ce6343a4&w=826",
+        "description": "test test test test description"
       },
       "roles": ["user", "sitter"],
       "pets": [
@@ -75,7 +76,8 @@
         "email": "jane@example.com",
         "telephone": "+987654321",
         "location": "Los Angeles",
-        "photo": "path/to/photo2.jpg"
+        "photo": "https://img.freepik.com/darmowe-wektory/pop-artu-mody-i-piekna-kobieta-kreskowka_18591-52376.jpg?t=st=1718655851~exp=1718659451~hmac=992e14553efdfeb67c48a9104b3963ecebedb38e013259b2c912a62f31201e4f&w=740",
+        "description": "test test test test description"
       },
       "roles": ["user", "sitter"],
       "pets": [
@@ -125,7 +127,8 @@
         "email": "alice@example.com",
         "telephone": "+123098456",
         "location": "Chicago",
-        "photo": "path/to/photo3.jpg"
+        "photo": "https://img.freepik.com/darmowe-wektory/portret-usmiechnietej-mlodej-dziewczyny_1308-166167.jpg?t=st=1718655891~exp=1718659491~hmac=622c98c2e30bf14daf4d1b5d95ce45a7728526c0a00c2ac0ad2c5b2afc44339b&w=996",
+        "description": "test test test test description"
       },
       "roles": ["user"],
       "pets": [

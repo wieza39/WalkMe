@@ -59,5 +59,19 @@
 .search-container .search-box-container .search-box .input-field .service-choice .service-selected {
   background-color: #2eb5f8;
 }
+.search-container .results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.search-container .results-container .sitter-small-profile {
+  width: 90%;
+  margin: 5% 5%;
+  display: flex;
+  flex-direction: row;
+}
+.search-container .results-container .sitter-small-profile .sitter-info .sitter-photo {
+  width: 100px;
+}
 
 /*# sourceMappingURL=searchMarket.css.map */
