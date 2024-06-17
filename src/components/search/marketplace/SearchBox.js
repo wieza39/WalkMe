@@ -59,76 +59,86 @@ export default function SearchBox() {
         });
     };
 
-
-
-    console.log(petAmount);
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Comment: Prevent default form submission behavior
+        console.log("Form submitted with data:", { location, startDate, endDate, serviceSelected, petAmount }); // Comment: Log form data
+    };
 
     return (
         <div className="search-box-container">
             <div className="search-box">
-                <div className="input-field">
-                    <Input value={location} setter={setLocation}/>
+                <form onSubmit={handleSubmit}>
+                    <div className="input-field">
+                        <Input value={location} setter={setLocation}/>
 
-                    <div className="date-picker">
-                        <DatePicker
-                            selected={startDate}
-                            onChange={(newDate) => setStartDate(newDate)}
-                            onSelect={(newDate) => setStartDate(newDate)}
-                            dateFormat="dd-MM-yyyy"
-                            className="input date-picker-input"
-                        />
-                        <DatePicker
-                            selected={endDate}
-                            onChange={(newDate) => setEndDate(newDate)}
-                            onSelect={(newDate) => setEndDate(newDate)}
-                            dateFormat="dd-MM-yyyy"
-                            className="input date-picker-input"
-                        />
-                    </div>
+                        <div className="date-picker">
+                            <DatePicker
+                                selected={startDate}
+                                onChange={(newDate) => setStartDate(newDate)}
+                                onSelect={(newDate) => setStartDate(newDate)}
+                                dateFormat="dd-MM-yyyy"
+                                className="input date-picker-input"
+                            />
+                            <DatePicker
+                                selected={endDate}
+                                onChange={(newDate) => setEndDate(newDate)}
+                                onSelect={(newDate) => setEndDate(newDate)}
+                                dateFormat="dd-MM-yyyy"
+                                className="input date-picker-input"
+                            />
+                        </div>
 
-                    <div className="service-choice">
-                        {services.map((service) => (
-                            <Button
-                                key={service.id}
-                                className={`service-button ${serviceSelected.includes(service.name) ? 'service-selected' : ''}`}
-                                variant="contained"
-                                onClick={() => toggleService(service.name)}
-                            >
-                                <i className={service.icon}></i>
-                            </Button>
-                        ))}
-                    </div>
-                    <div className="pets-selection">
-                        {petType.map((pet) => (
-                            <FormControl key={pet.type} variant="outlined" fullWidth>
-                                <InputLabel className="pet-button"></InputLabel>
-                                <TextField
-                                    select
-                                    labelId={`pet-button-${pet.type}`}
-                                    className="pet-button-text"
-                                    value={petAmount.find(p => p.type === pet.type)?.amount || ''}
-                                    label={pet.name}
-                                    onChange={(event) => handlePetAmount(event, pet)}
-                                    InputProps={{
-                                        startAdornment: (
-                                            <InputAdornment position="start">
-                                                <i className={pet.icon}></i>
-                                            </InputAdornment>
-                                        ),
-                                    }}
+                        <div className="service-choice">
+                            {services.map((service) => (
+                                <Button
+                                    key={service.id}
+                                    className={`service-button ${serviceSelected.includes(service.name) ? 'service-selected' : ''}`}
+                                    variant="contained"
+                                    onClick={() => toggleService(service.name)}
                                 >
-                                    <MenuItem value={1}>1</MenuItem>
-                                    <MenuItem value={2}>2</MenuItem>
-                                    <MenuItem value={3}>3</MenuItem>
-                                    <MenuItem value={4}>4</MenuItem>
-                                    <MenuItem value={5}>5</MenuItem>
-                                    <MenuItem value={6}>6</MenuItem>
-                                </TextField>
-                            </FormControl>
-                        ))}
+                                    <i className={service.icon}></i>
+                                </Button>
+                            ))}
+                        </div>
+                        <div className="pets-selection">
+                            {petType.map((pet) => (
+                                <FormControl key={pet.type} variant="outlined" fullWidth>
+                                    <InputLabel className="pet-button"></InputLabel>
+                                    <TextField
+                                        select
+                                        labelId={`pet-button-${pet.type}`}
+                                        className="pet-button-text"
+                                        value={petAmount.find(p => p.type === pet.type)?.amount || ''}
+                                        label={pet.name}
+                                        onChange={(event) => handlePetAmount(event, pet)}
+                                        InputProps={{
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <i className={pet.icon}></i>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                    >
+                                        <MenuItem value={1}>1</MenuItem>
+                                        <MenuItem value={2}>2</MenuItem>
+                                        <MenuItem value={3}>3</MenuItem>
+                                        <MenuItem value={4}>4</MenuItem>
+                                        <MenuItem value={5}>5</MenuItem>
+                                        <MenuItem value={6}>6</MenuItem>
+                                    </TextField>
+                                </FormControl>
+                            ))}
+
+                            <button
+                                type="submit"
+                                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            >
+                                Szukaj
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
-    )
+)
 }
