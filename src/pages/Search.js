@@ -14,9 +14,7 @@ export default function Search() {
             <div className="search-container">
                 <ServiceProvider>
                     <SearchBox/>
-
-                        <SearchResults/>
-
+                    <SearchResults/>
                 </ServiceProvider>
             </div>
             <Footer/>

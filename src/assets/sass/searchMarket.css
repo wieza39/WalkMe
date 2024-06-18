@@ -1,3 +1,4 @@
+@import url("../colors.css");
 .search-container {
   /* Styles for the whole search container */
 }
@@ -10,9 +11,11 @@
   align-items: center;
 }
 .search-container .search-box-container .search-box {
-  margin: 30px 50px;
+  margin: 10px 0;
   padding: 5% 5%;
-  background-color: red;
+  background-color: var(--bg-section);
+  box-shadow: 0 5px 5px 3px rgba(95, 99, 206, 0.2);
+  width: 100%;
   height: 70%;
   display: flex;
   align-items: center;
@@ -28,6 +31,7 @@
   padding: 0.75rem;
   margin: 4px 0;
   border: 1px solid #e2e8f0;
+  background-color: var(--white);
   border-radius: 0.375rem;
   font-size: 0.875rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -53,25 +57,81 @@
   padding: 10px;
   text-align: center;
   border-radius: 0.375rem;
+  background-color: var(--cta-theme-secondary);
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
 }
 .search-container .search-box-container .search-box .input-field .service-choice .service-selected {
-  background-color: #2eb5f8;
+  background-color: var(--cta-theme);
+  border: 0.5px solid var(--text-section);
+  box-shadow: 0 0 3px 3px var(--cta-theme);
+}
+.search-container .search-box-container .search-box .input-field .pets-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 5% 5%;
+  border-radius: 0.375rem;
+  background-color: var(--cta-theme-secondary);
+}
+.search-container .search-box-container .search-box .input-field .pets-selection div {
+  padding: 0.5rem;
+}
+.search-container .search-box-container .search-box .input-field .pets-selection div .MuiInputAdornment-root {
+  color: var(--white);
+}
+.search-container .search-box-container .search-box .input-field .pets-selection button {
+  width: 75%;
+  margin: 5% 2%;
+  box-shadow: 0 0 25px 0.5px var(--bg-section);
 }
 .search-container .results-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: var(--white);
 }
 .search-container .results-container .sitter-small-profile {
   width: 90%;
   margin: 5% 5%;
+  padding: 5% 5%;
   display: flex;
   flex-direction: row;
+  background-color: var(--bg-section);
+  color: var(--text-section);
+}
+.search-container .results-container .sitter-small-profile .sitter-info {
+  margin: 0 3%;
 }
 .search-container .results-container .sitter-small-profile .sitter-info .sitter-photo {
   width: 100px;
+  box-shadow: 0 0 1px 1px var(--white);
+}
+.search-container .results-container .sitter-small-profile .sitter-info .sitter-bio {
+  padding: 5% 5%;
+}
+.search-container .results-container .sitter-small-profile .sitter-info .sitter-bio h4 {
+  font-size: 1.25rem;
+  color: var(--white);
+}
+.search-container .results-container .sitter-small-profile .sitter-info .sitter-bio p {
+  font-size: 0.85rem;
+}
+.search-container .results-container .sitter-small-profile .sitter-info .sitter-bio p i {
+  margin-left: 0.2rem;
+}
+.search-container .results-container .sitter-small-profile .sitter-info button {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.search-container .results-container .sitter-small-profile .sitter-description {
+  padding: 3% 5%;
+  border-left: 0.2px solid var(--text-section);
+  color: var(--white);
+  font-size: 0.75rem;
+  text-align: justify;
 }
 
 /*# sourceMappingURL=searchMarket.css.map */

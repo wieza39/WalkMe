@@ -11,7 +11,7 @@
         "telephone": "+123456789",
         "location": "New York",
         "photo": "https://img.freepik.com/darmowe-zdjecie/portret-mezczyzny-w-stylu-kreskowki_23-2151134033.jpg?t=st=1718655803~exp=1718659403~hmac=b848bb05548274a1d9c6ec4a8c1ba2fa51473b81923ea965f051d418ce6343a4&w=826",
-        "description": "test test test test description"
+        "description": "Hey there! I'm a pet lover with tons of experience in caring for all kinds of furry friends. Whether it's feeding, walking, playing, or just hanging out, I've got it covered. Your pets will get all the love and attention they need while you're away. I'll make sure they're happy, healthy, and having a great time. You can relax knowing your pets are in good hands with me!"
       },
       "roles": ["user", "sitter"],
       "pets": [
@@ -77,7 +77,7 @@
         "telephone": "+987654321",
         "location": "Los Angeles",
         "photo": "https://img.freepik.com/darmowe-wektory/pop-artu-mody-i-piekna-kobieta-kreskowka_18591-52376.jpg?t=st=1718655851~exp=1718659451~hmac=992e14553efdfeb67c48a9104b3963ecebedb38e013259b2c912a62f31201e4f&w=740",
-        "description": "test test test test description"
+        "description": "Hi there! I'm Jane Doe, a dedicated pet sitter with a love for all animals. Whether it's walking, feeding, or just spending quality time, I ensure your pets get the best care possible. I'm currently a student, and I've been pet sitting for over 2 years. I'm comfortable with dogs, cats, and even small critters. Your pets will be in safe and loving hands with me!"
       },
       "roles": ["user", "sitter"],
       "pets": [
