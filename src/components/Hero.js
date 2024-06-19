@@ -22,7 +22,7 @@ export default function Hero() {
                             <span className="sr-only">Your Company</span>
                             <img
                                 className="h-8 w-auto"
-                                src="/images/logo.png"
+                                src="/images/logoB.png"
                                 alt="logo"
                             />
                         </a>
@@ -58,7 +58,7 @@ export default function Hero() {
                                 <span className="sr-only">Your Company</span>
                                 <img
                                     className="h-8 w-auto"
-                                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                                    src="/images/logoB.png"
                                     alt=""
                                 />
                             </a>
