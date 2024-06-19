@@ -6,7 +6,7 @@ import {Button, FormControl, InputAdornment, InputLabel, TextField, MenuItem} fr
 import ServiceContext from "../ServiceContext";
 
 
-export default function SearchBox() {
+export default function SearchBox({ onSearch }) {
 
     const {
         location,
@@ -62,6 +62,7 @@ export default function SearchBox() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Form submitted with data:", { location, startDate, endDate, serviceSelected, petAmount });
+        onSearch();
     };
 
     return (
