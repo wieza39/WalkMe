@@ -7,13 +7,9 @@ export default function SearchResults() {
 
     const {
         location,
-        setLocation,
         startDate,
-        setStartDate,
         endDate,
-        setEndDate,
         serviceSelected,
-        setServiceSelected,
         petAmount,
         setPetAmount
     } = useContext(ServiceContext);
@@ -31,8 +27,23 @@ export default function SearchResults() {
     }
 
     if (users) {
+        // filter users
         const availableSitters = users.filter(user => {
-            return user.roles.includes("sitter");
+            // user that is a sitter
+            if (user.roles.includes("sitter")) {
+                // and provides chosen service
+                if (serviceSelected.some(service => user.sitterInfo.services.includes(service))) {
+                    // in selected area
+                    if (location === user.basicInfo.location || location === '') {
+                        // is available that time, then return
+                        return user.sitterInfo.unavailability.every(unavailability => {
+                            const unavailableDate = new Date(unavailability.date);
+                            return unavailableDate < new Date(startDate) || unavailableDate > new Date(endDate);
+                        });
+                    }
+                }
+            }
+            return false;
         });
 
 

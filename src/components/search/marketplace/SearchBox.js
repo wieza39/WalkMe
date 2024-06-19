@@ -60,8 +60,8 @@ export default function SearchBox() {
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault(); // Comment: Prevent default form submission behavior
-        console.log("Form submitted with data:", { location, startDate, endDate, serviceSelected, petAmount }); // Comment: Log form data
+        event.preventDefault();
+        console.log("Form submitted with data:", { location, startDate, endDate, serviceSelected, petAmount });
     };
 
     return (
