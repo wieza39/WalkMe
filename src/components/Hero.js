@@ -8,6 +8,7 @@ const navigation = [
     { name: 'O nas', href: '#about' },
     { name: 'Kontakt', href: '#contact' },
 ]
+const loggedUser = localStorage.getItem('loggedUser')
 
 export default function Hero() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -88,9 +89,12 @@ export default function Hero() {
                                 </div>
                                 <div className="py-6">
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                    { !loggedUser ? (
                                     <a href="/sign-in" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                         Zaloguj się
                                     </a>
+                                    ) : ('')
+                                    }
                                 </div>
                             </div>
                         </div>

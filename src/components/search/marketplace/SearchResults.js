@@ -1,9 +1,13 @@
 import React, {useContext} from "react";
 import ServiceContext from "../ServiceContext";
 import useFetch from "../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 
 
 export default function SearchResults({availableSitters}) {
+
+    const navigate = useNavigate();
+
 
     if (!availableSitters || availableSitters.length === 0) {
         return <div>No sitters found for your criteria.</div>;
@@ -14,7 +18,6 @@ export default function SearchResults({availableSitters}) {
         {id: 2, type: "cat", icon: "fa-solid fa-cat"},
         {id: 3, type: "caged", icon: "fa-solid fa-fish"}
     ]
-
 
     return (
         <div className="results-container">
@@ -38,6 +41,11 @@ export default function SearchResults({availableSitters}) {
                         <button
                             className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         ><i className="fa-regular fa-message"></i></button>
+                        <button
+                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            onClick={() => navigate(`/sitter/${sitter.id}`)
+                            }
+                        ><i className="fa-solid fa-id-card"></i></button>
                     </div>
                     <div className="sitter-description">
                         <p>{sitter.basicInfo.description}</p>

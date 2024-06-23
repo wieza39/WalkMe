@@ -1,18 +1,81 @@
 import React, {useState} from "react";
 import {PhotoIcon, UserCircleIcon} from '@heroicons/react/24/solid'
 import Switch from '@mui/material/Switch';
+import uuid from 'react-uuid';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function RegisterForm() {
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [email, setEmail] = useState('');
+    const [telephone, setTelephone] = useState('');
+    const [location, setLocation] = useState('');
+    const [photo, setPhoto] = useState('');
+    const [description, setDescription] = useState('');
+    const [roles, setRoles] = useState(['user']);
+    const [services, setServices] = useState([]);
+    const navigate = useNavigate();
+
     const [checked, setChecked] = useState(false);
 
     const handleSwitch = (event) => {
-        setChecked(event.target.checked);
+        const isChecked = event.target.checked;
+        setChecked(isChecked);
+        setRoles(isChecked ? ['user', 'sitter'] : ['user']);
     };
+
+    const handleServiceChange = (event) => {
+        const { name, checked } = event.target;
+        setServices(prevServices => {
+            if (checked) {
+                // Add the service if checked
+                return [...prevServices, name];
+            } else {
+                // Remove the service if unchecked
+                return prevServices.filter(service => service !== name);
+            }
+        });
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const newUser = {
+            id: uuid(),
+            username,
+            password,
+            basicInfo: {
+                name,
+                surname,
+                email,
+                telephone,
+                location,
+                photo,
+                description,
+            },
+            roles,
+            sitterInfo: {
+                services
+            },
+        };
+
+        fetch('/api/users', {
+            method: 'POST',
+            headers: { ContentType: 'application/json' },
+            body: JSON.stringify(newUser)
+        }).then(() => {
+            console.log('User added');
+            navigate('/sign-in')
+        })
+        console.log(newUser);
+    }
 
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="space-y-12">
                 <div className="border-b border-gray-900/10 pb-12 space-y-6">
                     <h2 className="text-base font-semibold leading-7 text-gray-900">Dane logowania</h2>
@@ -30,6 +93,8 @@ export default function RegisterForm() {
                                     <input
                                         type="text"
                                         name="username"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
                                         autoComplete="username"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
@@ -46,6 +111,8 @@ export default function RegisterForm() {
                                     <input
                                         type="password"
                                         name="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
                                         autoComplete="password"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
@@ -66,6 +133,8 @@ export default function RegisterForm() {
                                     <input
                                         type="email"
                                         name="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         autoComplete="email"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
@@ -82,6 +151,8 @@ export default function RegisterForm() {
                                     <input
                                         type="text"
                                         name="telephone"
+                                        value={telephone}
+                                        onChange={(e) => setTelephone(e.target.value)}
                                         autoComplete="telephone"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
@@ -107,6 +178,8 @@ export default function RegisterForm() {
                                     <input
                                         type="text"
                                         name="first-name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                         autoComplete="first-name"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
@@ -123,6 +196,8 @@ export default function RegisterForm() {
                                     <input
                                         type="text"
                                         name="last-name"
+                                        value={surname}
+                                        onChange={(e) => setSurname(e.target.value)}
                                         autoComplete="last-name"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
@@ -139,6 +214,8 @@ export default function RegisterForm() {
                                     <input
                                         type="text"
                                         name="location"
+                                        value={location}
+                                        onChange={(e) => setLocation(e.target.value)}
                                         autoComplete="location"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
@@ -155,7 +232,8 @@ export default function RegisterForm() {
                     name="description"
                     rows={5}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    defaultValue={''}
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                     placeholder="Napisz coś o sobie i swoim doświadczeniu ze zwierzetami. Masz psa? Kota? A może jesteś świrem na punkcie królików?"
                 />
                             </div>
@@ -182,7 +260,7 @@ export default function RegisterForm() {
                 <div className="text-sm leading-6 text-gray-900">
                     <Switch
                         checked={checked}
-                        clasName="mx-auto"
+                        className="mx-auto"
                         onChange={handleSwitch}
                         inputProps={{'aria-label': 'controlled'}}
                     />
@@ -209,8 +287,9 @@ export default function RegisterForm() {
                                 <div className="relative flex gap-x-3">
                                     <div className="flex h-6 items-center">
                                         <input
-                                            name="service"
+                                            name="stay"
                                             type="checkbox"
+                                            onChange={handleServiceChange}
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
                                     </div>
@@ -225,8 +304,9 @@ export default function RegisterForm() {
                                 <div className="relative flex gap-x-3">
                                     <div className="flex h-6 items-center">
                                         <input
-                                            name="service"
+                                            name="walk"
                                             type="checkbox"
+                                            onChange={handleServiceChange}
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
                                     </div>
@@ -242,8 +322,9 @@ export default function RegisterForm() {
                                 <div className="relative flex gap-x-3">
                                     <div className="flex h-6 items-center">
                                         <input
-                                            name="service"
+                                            name="take"
                                             type="checkbox"
+                                            onChange={handleServiceChange}
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
                                     </div>
@@ -259,8 +340,9 @@ export default function RegisterForm() {
                                 <div className="relative flex gap-x-3">
                                     <div className="flex h-6 items-center">
                                         <input
-                                            name="service"
+                                            name="feed"
                                             type="checkbox"
+                                            onChange={handleServiceChange}
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
                                     </div>

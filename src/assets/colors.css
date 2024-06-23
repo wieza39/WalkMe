@@ -1,12 +1,14 @@
 :root {
     --bg-section: #1F2937;
+    --bg-white: #eaeaea;
     --cta-theme: #4F46E5;
     --cta-theme-secondary: #57557D;
-    --text-section: #9CA3AF;
+    --text-section: rgba(156, 163, 175, 0.59);
     --secondary: #AF5D63;
     --temporary: #9E2B25;
     --bottle-green: #0C4A0B;
     --yellow-cab: #FFB100;
     --white: #EDEDED;
     --shadow: rgba(95, 99, 206, 0.2);
+    --text-grey: #757575;
 }

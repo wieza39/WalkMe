@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "johnDoe",
       "password": "securePassword123",
       "basicInfo": {
@@ -13,7 +13,10 @@
         "photo": "https://img.freepik.com/darmowe-zdjecie/portret-mezczyzny-w-stylu-kreskowki_23-2151134033.jpg?t=st=1718655803~exp=1718659403~hmac=b848bb05548274a1d9c6ec4a8c1ba2fa51473b81923ea965f051d418ce6343a4&w=826",
         "description": "Hey there! I'm a pet lover with tons of experience in caring for all kinds of furry friends. Whether it's feeding, walking, playing, or just hanging out, I've got it covered. Your pets will get all the love and attention they need while you're away. I'll make sure they're happy, healthy, and having a great time. You can relax knowing your pets are in good hands with me!"
       },
-      "roles": ["user", "sitter"],
+      "roles": [
+        "user",
+        "sitter"
+      ],
       "pets": [
         {
           "id": 1,
@@ -22,7 +25,11 @@
           "size": "small",
           "age": 3,
           "description": "Friendly golden retriever.",
-          "knownCommands": ["sit", "stay", "come"],
+          "knownCommands": [
+            "sit",
+            "stay",
+            "come"
+          ],
           "frequencyOfWalksNeeded": "twice a day",
           "typeOfActivity": "high"
         },
@@ -39,7 +46,10 @@
         }
       ],
       "sitterInfo": {
-        "services" : ["walk", "feed"],
+        "services": [
+          "walk",
+          "feed"
+        ],
         "ratings": [
           {
             "id": 1,
@@ -79,7 +89,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "janeDoe",
       "password": "anotherSecurePassword",
       "basicInfo": {
@@ -91,7 +101,10 @@
         "photo": "https://img.freepik.com/darmowe-wektory/pop-artu-mody-i-piekna-kobieta-kreskowka_18591-52376.jpg?t=st=1718655851~exp=1718659451~hmac=992e14553efdfeb67c48a9104b3963ecebedb38e013259b2c912a62f31201e4f&w=740",
         "description": "Hi there! I'm Jane Doe, a dedicated pet sitter with a love for all animals. Whether it's walking, feeding, or just spending quality time, I ensure your pets get the best care possible. I'm currently a student, and I've been pet sitting for over 2 years. I'm comfortable with dogs, cats, and even small critters. Your pets will be in safe and loving hands with me!"
       },
-      "roles": ["user", "sitter"],
+      "roles": [
+        "user",
+        "sitter"
+      ],
       "pets": [
         {
           "id": 3,
@@ -100,13 +113,21 @@
           "size": "medium",
           "age": 4,
           "description": "Energetic border collie.",
-          "knownCommands": ["sit", "fetch", "stay"],
+          "knownCommands": [
+            "sit",
+            "fetch",
+            "stay"
+          ],
           "frequencyOfWalksNeeded": "three times a day",
           "typeOfActivity": "high"
         }
       ],
       "sitterInfo": {
-        "services" : ["feed", "stay", "take"],
+        "services": [
+          "feed",
+          "stay",
+          "take"
+        ],
         "ratings": [
           {
             "id": 3,
@@ -146,7 +167,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "aliceSmith",
       "password": "yetAnotherSecurePassword",
       "basicInfo": {
@@ -158,7 +179,9 @@
         "photo": "https://img.freepik.com/darmowe-wektory/portret-usmiechnietej-mlodej-dziewczyny_1308-166167.jpg?t=st=1718655891~exp=1718659491~hmac=622c98c2e30bf14daf4d1b5d95ce45a7728526c0a00c2ac0ad2c5b2afc44339b&w=996",
         "description": "test test test test description"
       },
-      "roles": ["user"],
+      "roles": [
+        "user"
+      ],
       "pets": [
         {
           "id": 4,
@@ -184,36 +207,76 @@
         }
       ],
       "sitterInfo": {
-        "services" : [],
+        "services": [],
         "ratings": [],
         "unavailability": []
+      }
+    },
+    {
+      "id": "edae8d50-0426-a8cb-d200-a760578e8a8a",
+      "username": "",
+      "password": "",
+      "basicInfo": {
+        "name": "",
+        "surname": "",
+        "email": "",
+        "telephone": "",
+        "location": "",
+        "photo": "",
+        "description": "opis"
+      },
+      "roles": [
+        "user"
+      ],
+      "sitterInfo": {
+        "services": []
+      }
+    },
+    {
+      "id": "94ad34c1-6651-67d9-f023-5f2ad06f7bde",
+      "username": "",
+      "password": "",
+      "basicInfo": {
+        "name": "",
+        "surname": "",
+        "email": "",
+        "telephone": "",
+        "location": "",
+        "photo": "",
+        "description": ""
+      },
+      "roles": [
+        "user"
+      ],
+      "sitterInfo": {
+        "services": []
       }
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "text": "Excellent sitter! Took great care of my dog.",
       "sitterId": 1,
       "userId": 2,
       "date": "2023-06-01"
     },
     {
-      "id": 2,
+      "id": "2",
       "text": "Very good, but a bit late for the appointment.",
       "sitterId": 1,
       "userId": 3,
       "date": "2023-06-10"
     },
     {
-      "id": 3,
+      "id": "3",
       "text": "Jane was fantastic with my dog.",
       "sitterId": 2,
       "userId": 1,
       "date": "2023-07-01"
     },
     {
-      "id": 4,
+      "id": "4",
       "text": "Great sitter, very attentive.",
       "sitterId": 2,
       "userId": 3,
@@ -222,21 +285,21 @@
   ],
   "appointments": [
     {
-      "id": 1,
+      "id": "1",
       "sitterId": 1,
       "userId": 2,
       "date": "2024-06-20",
       "status": "booked"
     },
     {
-      "id": 2,
+      "id": "2",
       "sitterId": 1,
       "userId": 3,
       "date": "2024-06-21",
       "status": "booked"
     },
     {
-      "id": 3,
+      "id": "3",
       "sitterId": 2,
       "userId": 1,
       "date": "2024-07-01",
