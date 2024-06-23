@@ -209,7 +209,7 @@ export default function RegisterForm() {
                                 <div className="relative flex gap-x-3">
                                     <div className="flex h-6 items-center">
                                         <input
-                                            name="stay"
+                                            name="service"
                                             type="checkbox"
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
@@ -225,7 +225,7 @@ export default function RegisterForm() {
                                 <div className="relative flex gap-x-3">
                                     <div className="flex h-6 items-center">
                                         <input
-                                            name="walk"
+                                            name="service"
                                             type="checkbox"
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
@@ -242,7 +242,7 @@ export default function RegisterForm() {
                                 <div className="relative flex gap-x-3">
                                     <div className="flex h-6 items-center">
                                         <input
-                                            name="stay"
+                                            name="service"
                                             type="checkbox"
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
@@ -259,7 +259,7 @@ export default function RegisterForm() {
                                 <div className="relative flex gap-x-3">
                                     <div className="flex h-6 items-center">
                                         <input
-                                            name="feed"
+                                            name="service"
                                             type="checkbox"
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
