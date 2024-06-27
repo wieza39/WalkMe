@@ -257,6 +257,7 @@
     {
       "id": "1",
       "text": "Excellent sitter! Took great care of my dog.",
+      "rate": 5,
       "sitterId": 1,
       "userId": 2,
       "date": "2023-06-01"
@@ -264,6 +265,7 @@
     {
       "id": "2",
       "text": "Very good, but a bit late for the appointment.",
+      "rate": 4,
       "sitterId": 1,
       "userId": 3,
       "date": "2023-06-10"
@@ -271,13 +273,15 @@
     {
       "id": "3",
       "text": "Jane was fantastic with my dog.",
+      "rate": 5,
       "sitterId": 2,
       "userId": 1,
       "date": "2023-07-01"
     },
     {
       "id": "4",
-      "text": "Great sitter, very attentive.",
+      "text": "Great sitter, very attentive, but hard to keep in touch. :(",
+      "rate": 3,
       "sitterId": 2,
       "userId": 3,
       "date": "2023-08-15"

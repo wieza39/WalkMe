@@ -58,3 +58,24 @@
     }
   }
 }
+
+
+@media(min-width: 900px) {
+
+  .sitter-info-container {
+    display: flex;
+    box-shadow: 0 0 3px 3px var(--shadow);
+    .sitter-info-details-container {
+      padding: 2% 2%;
+      .sitter-info-photo {
+        img {
+
+        }
+      }
+
+      .sitter-info-details {
+
+      }
+    }
+  }
+}

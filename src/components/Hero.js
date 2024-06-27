@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import '../assets/sass/general.css'
 
 const navigation = [
+    { name: 'Znajdź opiekuna', href: '/search' },
     { name: 'Jak działamy?', href: '#how-does-it-work' },
     { name: 'O nas', href: '#about' },
     { name: 'Kontakt', href: '#contact' },
@@ -19,7 +20,7 @@ export default function Hero() {
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <a href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
                             <img
                                 className="h-8 w-auto"
@@ -40,7 +41,8 @@ export default function Hero() {
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12" >
                         {navigation.map((item) => (
-                            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900" >
+                            <a key={item.name} href={item.href} className={`text-sm font-semibold leading-6 ${item.name === 'Znajdź opiekuna' ? 'theme-font' : 'text-gray-900'}`}
+                            >
                                 {item.name}
                             </a>
                         ))}
@@ -79,7 +81,7 @@ export default function Hero() {
                                         <a
                                             key={item.name}
                                             href={item.href}
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${item.name === 'Znajdź opiekuna' ? 'theme-font' : 'text-gray-900'} hover:bg-gray-50`}
                                             onClick={() => {setMobileMenuOpen(false);
                                             }}
                                         >
@@ -93,7 +95,13 @@ export default function Hero() {
                                     <a href="/sign-in" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                         Zaloguj się
                                     </a>
-                                    ) : ('')
+                                    ) : (
+                                        <a href="/"
+                                           onClick={e => window.localStorage.clear()}
+                                           className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                            Wyloguj się
+                                        </a>
+                                    )
                                     }
                                 </div>
                             </div>

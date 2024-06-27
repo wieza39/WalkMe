@@ -1,5 +1,5 @@
 .comment-section {
-  padding: 0 5%;
+  padding: 5% 5%;
 }
 .comment-section h3 {
   font-size: 1.5rem;
@@ -12,12 +12,14 @@
   background-color: #FFFFFF;
   box-shadow: 0 0 3px 3px var(--shadow);
   display: flex;
+  justify-content: space-between;
 }
 .comment-section .comment-container .comment-photo {
   width: 20%;
 }
 .comment-section .comment-container .comment-details {
-  padding: 0 5%;
+  padding: 0 2%;
+  width: 60%;
 }
 .comment-section .comment-container .comment-details .comment-header {
   display: flex;
@@ -35,6 +37,25 @@
 .comment-section .comment-container .comment-details .comment-description {
   padding: 2% 0;
   font-size: 0.7rem;
+}
+.comment-section .comment-container button {
+  width: 2rem;
+  height: 2rem;
+}
+.comment-section .comment-container button i {
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .comment-section .comment-container .comment-details .comment-header .commenter-name {
+    font-size: 2rem;
+  }
+  .comment-section .comment-container .comment-details .comment-header .comment-date {
+    font-size: 1.2rem;
+  }
+  .comment-section .comment-container .comment-details .comment-description {
+    font-size: 1.2rem;
+  }
 }
 
 /*# sourceMappingURL=comments.css.map */

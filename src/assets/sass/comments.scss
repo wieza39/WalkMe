@@ -1,5 +1,5 @@
 .comment-section {
-  padding: 0 5%;
+  padding: 5% 5%;
 
   h3 {
     font-size: 1.5rem;
@@ -13,13 +13,15 @@
     background-color: #FFFFFF;
     box-shadow: 0 0 3px 3px var(--shadow);
     display: flex;
+    justify-content: space-between;
 
     .comment-photo {
       width: 20%;
     }
 
     .comment-details {
-      padding: 0 5%;
+      padding: 0 2%;
+      width: 60%;
 
       .comment-header {
         display: flex;
@@ -39,6 +41,35 @@
       .comment-description {
         padding: 2% 0;
         font-size: 0.7rem;
+      }
+    }
+
+    button {
+      width: 2rem;
+      height: 2rem;
+      i {
+        margin: auto;
+      }
+    }
+  }
+}
+
+
+@media(min-width: 768px) {
+  .comment-section {
+    .comment-container {
+      .comment-details {
+        .comment-header {
+          .commenter-name {
+            font-size: 2rem;
+          }
+          .comment-date {
+            font-size: 1.2rem;
+          }
+        }
+        .comment-description {
+          font-size: 1.2rem;
+        }
       }
     }
   }

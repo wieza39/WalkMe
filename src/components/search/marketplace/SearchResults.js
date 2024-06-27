@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import ServiceContext from "../ServiceContext";
 import useFetch from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
+import Rating from "../../elements/Rating";
 
 
 export default function SearchResults({availableSitters}) {
@@ -10,7 +11,7 @@ export default function SearchResults({availableSitters}) {
 
 
     if (!availableSitters || availableSitters.length === 0) {
-        return <div>No sitters found for your criteria.</div>;
+        return <div className="not-found">No sitters found for your criteria.</div>;
     }
 
     const petType = [
@@ -36,7 +37,7 @@ export default function SearchResults({availableSitters}) {
                                     return petIcon ? <i className={petIcon}></i> : "No pets";
                                 })}
                             </p>
-                            <p>Rating: </p>
+                            <Rating ratings={sitter.sitterInfo.ratings} />
                         </div>
                         <button
                             className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

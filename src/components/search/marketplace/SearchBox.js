@@ -21,6 +21,8 @@ export default function SearchBox({ onSearch }) {
         setPetAmount
     } = useContext(ServiceContext);
 
+    const [error, setError] = useState('');
+
     const services = [
         {id: 1, name: "stay", icon: "fa-solid fa-house"},
         {id: 2, name: "walk", icon: "fa-solid fa-person-walking-with-cane"},
@@ -59,6 +61,49 @@ export default function SearchBox({ onSearch }) {
         });
     };
 
+    const validateDates = (start, end) => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Ignore time part for comparison
+        if (start && start < today) {
+            setError('Początkowa data nie może być z przeszłości');
+            return false;
+        }
+        if (end && end < today) {
+            setError('Końcowa data nie może być z przeszłości');
+            return false;
+        }
+        if (start && end && start > end) {
+            setError('Data początkowa, nie może być późniejsza niż końcowa');
+            return false;
+        }
+        setError('');
+        return true;
+    };
+
+    const handleStartDateChange = (date) => {
+        if (validateDates(date, endDate)) {
+            setStartDate(date);
+        }
+    };
+
+    const handleEndDateChange = (date) => {
+        if (validateDates(startDate, date)) {
+            setEndDate(date);
+        }
+    };
+
+    const handleStartDateSelect = (date) => {
+        if (validateDates(date, endDate)) {
+            setStartDate(date);
+        }
+    };
+
+    const handleEndDateSelect = (date) => {
+        if (validateDates(startDate, date)) {
+            setEndDate(date);
+        }
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Form submitted with data:", { location, startDate, endDate, serviceSelected, petAmount });
@@ -75,19 +120,20 @@ export default function SearchBox({ onSearch }) {
                         <div className="date-picker">
                             <DatePicker
                                 selected={startDate}
-                                onChange={(newDate) => setStartDate(newDate)}
-                                onSelect={(newDate) => setStartDate(newDate)}
+                                onChange={handleStartDateChange}
+                                onSelect={handleStartDateSelect}
                                 dateFormat="dd-MM-yyyy"
                                 className="input date-picker-input"
                             />
                             <DatePicker
                                 selected={endDate}
-                                onChange={(newDate) => setEndDate(newDate)}
-                                onSelect={(newDate) => setEndDate(newDate)}
+                                onChange={handleEndDateChange}
+                                onSelect={handleEndDateSelect}
                                 dateFormat="dd-MM-yyyy"
                                 className="input date-picker-input"
                             />
                         </div>
+                            { error && <div className="error">{error}</div> }
 
                         <div className="service-choice">
                             {services.map((service) => (
@@ -120,7 +166,7 @@ export default function SearchBox({ onSearch }) {
                                             ),
                                         }}
                                     >
-                                        <MenuItem value={0}></MenuItem>
+                                        <MenuItem value={0}>0</MenuItem>
                                         <MenuItem value={1}>1</MenuItem>
                                         <MenuItem value={2}>2</MenuItem>
                                         <MenuItem value={3}>3</MenuItem>
@@ -131,13 +177,13 @@ export default function SearchBox({ onSearch }) {
                                 </FormControl>
                             ))}
 
-                            <button
-                                type="submit"
-                                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                            >
-                                Szukaj
-                            </button>
                         </div>
+                        <button
+                            type="submit"
+                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        >
+                            Szukaj
+                        </button>
                     </div>
                 </form>
             </div>

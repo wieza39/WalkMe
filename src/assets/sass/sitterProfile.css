@@ -44,4 +44,14 @@
   margin: 3% 0;
 }
 
+@media (min-width: 900px) {
+  .sitter-info-container {
+    display: flex;
+    box-shadow: 0 0 3px 3px var(--shadow);
+  }
+  .sitter-info-container .sitter-info-details-container {
+    padding: 2% 2%;
+  }
+}
+
 /*# sourceMappingURL=sitterProfile.css.map */

@@ -1,4 +1,8 @@
 import React from "react";
+import Rating from "../../elements/Rating";
+import { Calendar } from 'primereact/calendar';
+
+
 
 
 export default function SitterInfo({ sitter }) {
@@ -30,7 +34,7 @@ export default function SitterInfo({ sitter }) {
                         </p>
                     </div>
                     <div className="sitter-info-details-rating">
-                        *****
+                        <Rating ratings={sitter.sitterInfo.ratings} />
                     </div>
                     <div className="sitter-info-details-actions">
                         <button

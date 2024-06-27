@@ -19,8 +19,7 @@ export default function Home() {
                 className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 flex justify-center items-center">
                 <div className="mx-auto max-w-2xl lg:mx-0 lg:items-start ">
                     <div className="lg:max-w-lg text-center">
-                        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better
-                            workflow</h1>
+                        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Opinie o nas</h1>
                     </div>
                 </div>
             </div>

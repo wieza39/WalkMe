@@ -20,3 +20,20 @@
 .white-font {
   color: var(--white);
 }
+
+.theme-font {
+  color: var(--cta-theme);
+}
+
+.fa-star, .fa-star-half-stroke {
+color: gold;
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1rem;
+  font-size: 1.25rem;
+  color: var(--cta-theme);
+}

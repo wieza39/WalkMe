@@ -20,6 +20,7 @@ export default function SignForm() {
             if (foundUser) {
                 setLoggedUser(foundUser);
                 navigate('/');
+                window.location.reload();
                 console.log("user found");
             } else {
                 console.log("user not found");
