@@ -3,7 +3,8 @@ import Rating from "../../elements/Rating";
 import Popover from '@mui/material/Popover';
 import "react-datepicker/dist/react-datepicker.css";
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+// import 'react-calendar/dist/Calendar.css';
+import '../../../assets/Calendar.css'
 
 export default function SitterInfo({sitter}) {
     const [popoverOpen, setPopoverOpen] = useState(false);
@@ -29,6 +30,20 @@ export default function SitterInfo({sitter}) {
 
     const handleChange = (date) => {
         //setSelectedDate(date);
+    };
+
+    const isDateBooked = (dateToCheck) => {
+        // Check if the dateToCheck is in the list of unavailability dates
+        return sitter.sitterInfo.unavailability.some(unavailable => {
+            const unavailableDate = new Date(unavailable.date);
+            return dateToCheck.getDate() === unavailableDate.getDate() &&
+                dateToCheck.getMonth() === unavailableDate.getMonth() &&
+                dateToCheck.getFullYear() === unavailableDate.getFullYear();
+        });
+    };
+
+    const tileClassName = ({ date }) => {
+        return isDateBooked(date) ? 'react-calendar__tile--booked' : '';
     };
 
     return (
@@ -69,11 +84,14 @@ export default function SitterInfo({sitter}) {
                                 horizontal: 'right',
                             }}
                         >
-                            <Calendar
-                                onChange={handleChange}
-                                value={selectedDate}
-                                className="calendar-in-popover"
-                            />
+
+                                <Calendar
+                                    onChange={setSelectedDate}
+                                    value={selectedDate}
+                                    className="calendar-in-popover"
+                                    tileClassName={tileClassName}
+                                />
+
                         </Popover>
                         <button
                             className="flex items-center justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -94,4 +112,3 @@ export default function SitterInfo({sitter}) {
         </div>
     );
 }
-
