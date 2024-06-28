@@ -30,6 +30,7 @@
   display: flex;
 }
 .sitter-info-container .sitter-info-details-container .sitter-info-details .sitter-info-details-actions button {
+  width: 50%;
   margin: 3% 2%;
 }
 .sitter-info-container .sitter-info-description {

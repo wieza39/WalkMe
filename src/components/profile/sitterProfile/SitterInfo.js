@@ -1,20 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import Rating from "../../elements/Rating";
-import { Calendar } from 'primereact/calendar';
+import Popover from '@mui/material/Popover';
+import "react-datepicker/dist/react-datepicker.css";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
-
-
-
-export default function SitterInfo({ sitter }) {
+export default function SitterInfo({sitter}) {
+    const [popoverOpen, setPopoverOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [selectedDate, setSelectedDate] = useState(new Date());
 
     const services = [
         {id: 1, name: "stay", icon: "fa-solid fa-house"},
         {id: 2, name: "walk", icon: "fa-solid fa-person-walking-with-cane"},
         {id: 3, name: "take", icon: "fa-solid fa-house-user"},
         {id: 4, name: "feed", icon: "fa-solid fa-bowl-rice"}
-    ]
+    ];
 
-    return(
+    const handlePopoverOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+        setPopoverOpen(true);
+    };
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+        setPopoverOpen(false);
+    };
+
+    const handleChange = (date) => {
+        //setSelectedDate(date);
+    };
+
+    return (
         <div className="sitter-info-container">
             <div className="sitter-info-details-container">
                 <div className="sitter-info-photo">
@@ -29,22 +46,40 @@ export default function SitterInfo({ sitter }) {
                         <p>Usługi:
                             {sitter.sitterInfo.services.map(service => {
                                 const serviceIcon = services.find(s => s.name === service)?.icon;
-                                return serviceIcon ? <i className={serviceIcon}></i> : "";
+                                return serviceIcon ? <i className={serviceIcon} key={service}></i> : "";
                             })}
                         </p>
                     </div>
                     <div className="sitter-info-details-rating">
-                        <Rating ratings={sitter.sitterInfo.ratings} />
+                        <Rating ratings={sitter.sitterInfo.ratings}/>
                     </div>
                     <div className="sitter-info-details-actions">
                         <button
-                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-
-                        ><i className="fa-regular fa-calendar"></i></button>
+                            className="flex items-center justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            onClick={handlePopoverOpen}
+                        >
+                            <i className="fa-regular fa-calendar calendar-icon"></i>
+                        </button>
+                        <Popover
+                            open={popoverOpen}
+                            anchorEl={anchorEl}
+                            onClose={handlePopoverClose}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                        >
+                            <Calendar
+                                onChange={handleChange}
+                                value={selectedDate}
+                                className="calendar-in-popover"
+                            />
+                        </Popover>
                         <button
-                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-
-                        ><i className="fa-regular fa-message"></i></button>
+                            className="flex items-center justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        >
+                            <i className="fa-regular fa-message"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -57,5 +92,6 @@ export default function SitterInfo({ sitter }) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
