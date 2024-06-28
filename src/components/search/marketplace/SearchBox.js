@@ -1,69 +1,43 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import Input from "../../elements/Input";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {Button, FormControl, InputAdornment, InputLabel, TextField, MenuItem} from "@mui/material";
+import { Button, FormControl, InputAdornment, InputLabel, TextField, MenuItem } from "@mui/material";
 import ServiceContext from "../ServiceContext";
 
-
 export default function SearchBox({ onSearch }) {
-
-    const {
-        location,
-        setLocation,
-        startDate,
-        setStartDate,
-        endDate,
-        setEndDate,
-        serviceSelected,
-        setServiceSelected,
-        petAmount,
-        setPetAmount
-    } = useContext(ServiceContext);
-
+    const { state: { location, startDate, endDate, serviceSelected, petAmount }, dispatch } = useContext(ServiceContext);
     const [error, setError] = useState('');
 
     const services = [
-        {id: 1, name: "stay", icon: "fa-solid fa-house"},
-        {id: 2, name: "walk", icon: "fa-solid fa-person-walking-with-cane"},
-        {id: 3, name: "take", icon: "fa-solid fa-house-user"},
-        {id: 4, name: "feed", icon: "fa-solid fa-bowl-rice"}
-    ]
+        { id: 1, name: "stay", icon: "fa-solid fa-house" },
+        { id: 2, name: "walk", icon: "fa-solid fa-person-walking-with-cane" },
+        { id: 3, name: "take", icon: "fa-solid fa-house-user" },
+        { id: 4, name: "feed", icon: "fa-solid fa-bowl-rice" }
+    ];
 
     const petType = [
-        {id: 1, type: "dog", icon: "fa-solid fa-dog"},
-        {id: 2, type: "cat", icon: "fa-solid fa-cat"},
-        {id: 3, type: "caged", icon: "fa-solid fa-fish"}
-    ]
+        { id: 1, type: "dog", icon: "fa-solid fa-dog" },
+        { id: 2, type: "cat", icon: "fa-solid fa-cat" },
+        { id: 3, type: "caged", icon: "fa-solid fa-fish" }
+    ];
+
+    const handleLocationChange = (e) => {
+        dispatch({ type: 'SET_LOCATION', payload: e.target.value });
+    };
 
     const toggleService = (serviceName) => {
-        setServiceSelected((prevSelected) => {
-            if (prevSelected.includes(serviceName)) {
-                const updatedSelected = prevSelected.filter((name) => name !== serviceName);
-                return updatedSelected.filter((name) => name !== "");
-            } else {
-                return [...prevSelected, serviceName];
-            }
-        });
+        dispatch({ type: 'TOGGLE_SERVICE', payload: serviceName });
     };
 
     const handlePetAmount = (event, pet) => {
         const amount = event.target.value;
-        setPetAmount((prevAmounts) => {
-            const existingPetIndex = prevAmounts.findIndex(p => p.type === pet.type);
-            if (existingPetIndex !== -1) {
-                const updatedAmounts = [...prevAmounts];
-                updatedAmounts[existingPetIndex] = { ...updatedAmounts[existingPetIndex], amount };
-                return updatedAmounts;
-            } else {
-                return [...prevAmounts, { type: pet.type, amount }];
-            }
-        });
+        dispatch({ type: 'SET_PET_AMOUNT', payload: { type: pet.type, amount } });
     };
 
     const validateDates = (start, end) => {
         const today = new Date();
-        today.setHours(0, 0, 0, 0); // Ignore time part for comparison
+        today.setHours(0, 0, 0, 0);
         if (start && start < today) {
             setError('Początkowa data nie może być z przeszłości');
             return false;
@@ -82,25 +56,13 @@ export default function SearchBox({ onSearch }) {
 
     const handleStartDateChange = (date) => {
         if (validateDates(date, endDate)) {
-            setStartDate(date);
+            dispatch({ type: 'SET_START_DATE', payload: date });
         }
     };
 
     const handleEndDateChange = (date) => {
         if (validateDates(startDate, date)) {
-            setEndDate(date);
-        }
-    };
-
-    const handleStartDateSelect = (date) => {
-        if (validateDates(date, endDate)) {
-            setStartDate(date);
-        }
-    };
-
-    const handleEndDateSelect = (date) => {
-        if (validateDates(startDate, date)) {
-            setEndDate(date);
+            dispatch({ type: 'SET_END_DATE', payload: date });
         }
     };
 
@@ -115,25 +77,23 @@ export default function SearchBox({ onSearch }) {
             <div className="search-box">
                 <form onSubmit={handleSubmit}>
                     <div className="input-field">
-                        <Input value={location} setter={setLocation}/>
+                        <Input value={location} onChange={handleLocationChange} />
 
                         <div className="date-picker">
                             <DatePicker
                                 selected={startDate}
                                 onChange={handleStartDateChange}
-                                onSelect={handleStartDateSelect}
                                 dateFormat="dd-MM-yyyy"
                                 className="input date-picker-input"
                             />
                             <DatePicker
                                 selected={endDate}
                                 onChange={handleEndDateChange}
-                                onSelect={handleEndDateSelect}
                                 dateFormat="dd-MM-yyyy"
                                 className="input date-picker-input"
                             />
                         </div>
-                            { error && <div className="error">{error}</div> }
+                        {error && <div className="error">{error}</div>}
 
                         <div className="service-choice">
                             {services.map((service) => (
@@ -176,7 +136,6 @@ export default function SearchBox({ onSearch }) {
                                     </TextField>
                                 </FormControl>
                             ))}
-
                         </div>
                         <button
                             type="submit"
@@ -188,5 +147,5 @@ export default function SearchBox({ onSearch }) {
                 </form>
             </div>
         </div>
-)
+    );
 }

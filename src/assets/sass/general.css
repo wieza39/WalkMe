@@ -37,4 +37,10 @@
   color: var(--cta-theme);
 }
 
+@media (min-width: 900px) {
+  .register-container {
+    display: flex;
+  }
+}
+
 /*# sourceMappingURL=general.css.map */

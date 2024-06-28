@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from 'react'
+import React, {Fragment, useEffect, useRef, useState} from 'react'
 import '../assets/sass/general.css'
 import {
     Disclosure,
@@ -31,29 +31,29 @@ function classNames(...classes) {
 
 export default function Navbar() {
 
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
     const location = useLocation();
+    const scrollListenerRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY > 100) {
+            if (window.scrollY > 100) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
             }
-        }
+        };
 
         if (location.pathname === '/') {
-            window.addEventListener('scroll', handleScroll);
-            return () => window.removeEventListener('scroll', handleScroll);
+            scrollListenerRef.current = handleScroll;
+
+            window.addEventListener('scroll', scrollListenerRef.current);
+
+            return () => {
+                window.removeEventListener('scroll', scrollListenerRef.current);
+            };
         } else {
             setIsVisible(true);
-        }
-    }, [location.pathname]);
-
-    useEffect(() => {
-        if (location.pathname === '/') {
-            setIsVisible(window.scrollY > 100);
         }
     }, [location.pathname]);
 

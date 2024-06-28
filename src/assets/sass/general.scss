@@ -37,3 +37,10 @@ color: gold;
   font-size: 1.25rem;
   color: var(--cta-theme);
 }
+
+
+@media(min-width: 900px) {
+  .register-container {
+    display: flex;
+  }
+}

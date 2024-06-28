@@ -5,6 +5,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import '../assets/sass/sitterProfile.css';
 import CommentSection from "../components/profile/CommentSection";
+import NotFound from "./NotFound";
 
 
 export default function SitterProfileInfo() {
@@ -43,7 +44,7 @@ export default function SitterProfileInfo() {
     }, [id]);
 
     if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error.message}</div>;
+    if (error) return <NotFound/>;
 
     return(
         <>

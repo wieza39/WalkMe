@@ -6,6 +6,7 @@ import Search from "./pages/Search";
 import {ServiceProvider} from "./components/search/ServiceContext";
 import Register from "./pages/Register";
 import SitterProfileInfo from "./pages/SitterProfileInfo";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
     return (
@@ -16,6 +17,7 @@ export default function App() {
                 <Route path="/search" element={<ServiceProvider><Search/></ServiceProvider>} />
                 <Route path="/register" element={<Register/>} />
                 <Route path="/sitter/:id" element={<SitterProfileInfo />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
     );

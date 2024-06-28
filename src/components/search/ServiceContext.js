@@ -1,29 +1,13 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useReducer } from 'react';
+import { serviceReducer, initialState } from './serviceReducer';
 
-const ServiceContext = createContext(1);
+const ServiceContext = createContext();
 
 export const ServiceProvider = ({ children }) => {
-    const [location, setLocation] = useState("");
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
-    const [serviceSelected, setServiceSelected] = useState([]);
-    const [petAmount, setPetAmount] = useState([]);
+    const [state, dispatch] = useReducer(serviceReducer, initialState);
 
     return (
-        <ServiceContext.Provider
-            value={{
-                location,
-                setLocation,
-                startDate,
-                setStartDate,
-                endDate,
-                setEndDate,
-                serviceSelected,
-                setServiceSelected,
-                petAmount,
-                setPetAmount
-            }}
-        >
+        <ServiceContext.Provider value={{ state, dispatch }}>
             {children}
         </ServiceContext.Provider>
     );

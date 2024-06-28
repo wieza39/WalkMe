@@ -251,6 +251,53 @@
       "sitterInfo": {
         "services": []
       }
+    },
+    {
+      "id": "f72c5d13-6272-ee47-f827-b0b72da505b8",
+      "username": "",
+      "password": "",
+      "basicInfo": {
+        "name": "",
+        "surname": "",
+        "email": "",
+        "telephone": "",
+        "location": "",
+        "photo": "",
+        "description": ""
+      },
+      "roles": [
+        "user",
+        "sitter"
+      ],
+      "sitterInfo": {
+        "services": []
+      }
+    },
+    {
+      "id": "4e008323-b00c-6686-98f0-4354787ad356",
+      "username": "testuser",
+      "password": "test",
+      "basicInfo": {
+        "name": "Nowy",
+        "surname": "User",
+        "email": "test@gmai.com",
+        "telephone": "601234567",
+        "location": "Miasto",
+        "photo": "",
+        "description": "Chce zobaczyc czy sie wyswietli"
+      },
+      "roles": [
+        "user",
+        "sitter"
+      ],
+      "sitterInfo": {
+        "services": [
+          "stay",
+          "walk",
+          "take",
+          "feed"
+        ]
+      }
     }
   ],
   "comments": [

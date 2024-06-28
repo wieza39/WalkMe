@@ -17,7 +17,10 @@ export default function RegisterForm() {
     const [photo, setPhoto] = useState('');
     const [description, setDescription] = useState('');
     const [roles, setRoles] = useState(['user']);
+    const [pets, setPets] = useState([]);
     const [services, setServices] = useState([]);
+    const [ratings, setRatings] = useState([]);
+    const [unavailability, setUnavailability] = useState([]);
     const navigate = useNavigate();
 
     const [checked, setChecked] = useState(false);
@@ -32,10 +35,8 @@ export default function RegisterForm() {
         const { name, checked } = event.target;
         setServices(prevServices => {
             if (checked) {
-                // Add the service if checked
                 return [...prevServices, name];
             } else {
-                // Remove the service if unchecked
                 return prevServices.filter(service => service !== name);
             }
         });
@@ -57,8 +58,11 @@ export default function RegisterForm() {
                 description,
             },
             roles,
+            pets,
             sitterInfo: {
-                services
+                services,
+                ratings,
+                unavailability
             },
         };
 
@@ -94,6 +98,7 @@ export default function RegisterForm() {
                                         type="text"
                                         name="username"
                                         value={username}
+                                        required
                                         onChange={(e) => setUsername(e.target.value)}
                                         autoComplete="username"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
@@ -112,17 +117,18 @@ export default function RegisterForm() {
                                         type="password"
                                         name="password"
                                         value={password}
+                                        required
                                         onChange={(e) => setPassword(e.target.value)}
                                         autoComplete="password"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
                                 </div>
                             </div>
-                        </div>
                         <p className="mt-1 text-sm leading-6 text-gray-600">
                             Email i numer telefonu potrzebujemy do rejestracji. Dodatkowo, będą je widzieć tylko
                             zweryfikowani i zalogowani użytkownicy.
                         </p>
+                        </div>
                         <div className="sm:col-span-4">
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                                 E-mail
@@ -134,6 +140,7 @@ export default function RegisterForm() {
                                         type="email"
                                         name="email"
                                         value={email}
+                                        required
                                         onChange={(e) => setEmail(e.target.value)}
                                         autoComplete="email"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
@@ -152,6 +159,7 @@ export default function RegisterForm() {
                                         type="text"
                                         name="telephone"
                                         value={telephone}
+                                        required
                                         onChange={(e) => setTelephone(e.target.value)}
                                         autoComplete="telephone"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
@@ -179,6 +187,7 @@ export default function RegisterForm() {
                                         type="text"
                                         name="first-name"
                                         value={name}
+                                        required
                                         onChange={(e) => setName(e.target.value)}
                                         autoComplete="first-name"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
@@ -197,6 +206,7 @@ export default function RegisterForm() {
                                         type="text"
                                         name="last-name"
                                         value={surname}
+                                        required
                                         onChange={(e) => setSurname(e.target.value)}
                                         autoComplete="last-name"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
@@ -215,6 +225,7 @@ export default function RegisterForm() {
                                         type="text"
                                         name="location"
                                         value={location}
+                                        required
                                         onChange={(e) => setLocation(e.target.value)}
                                         autoComplete="location"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
@@ -233,6 +244,7 @@ export default function RegisterForm() {
                     rows={5}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     value={description}
+                    required
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Napisz coś o sobie i swoim doświadczeniu ze zwierzetami. Masz psa? Kota? A może jesteś świrem na punkcie królików?"
                 />
