@@ -5,11 +5,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import Calendar from 'react-calendar';
 // import 'react-calendar/dist/Calendar.css';
 import '../../../assets/Calendar.css'
+import {useNavigate} from "react-router-dom";
 
 export default function SitterInfo({sitter}) {
     const [popoverOpen, setPopoverOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedDate, setSelectedDate] = useState(new Date());
+    const navigate = useNavigate();
 
     const services = [
         {id: 1, name: "stay", icon: "fa-solid fa-house"},

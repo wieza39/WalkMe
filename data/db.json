@@ -59,7 +59,7 @@
           },
           {
             "id": 2,
-            "rating": 4,
+            "rating": 2,
             "comment": "Very good, but a bit late for the appointment.",
             "userId": 3
           }
@@ -90,6 +90,332 @@
     },
     {
       "id": "2",
+      "username": "janeSmith",
+      "password": "securePassword456",
+      "basicInfo": {
+        "name": "Jane",
+        "surname": "Smith",
+        "email": "jane@example.com",
+        "telephone": "+987654321",
+        "location": "Los Angeles",
+        "photo": "https://img.freepik.com/darmowe-zdjecie/3d-ilustracja-hipstera-z-wasami-i-okularami_1142-42006.jpg?t=st=1719614978~exp=1719618578~hmac=2e8c8da53ec2a0538f3d76bd2ce992b8221b59a166a16dcdd8f1d3bf84bd331e&w=996",
+        "description": "Hi! I'm Jane, a passionate pet sitter with years of experience. Your pets will be treated like royalty under my care. I ensure they get all the love, attention, and exercise they need. Let me take care of your furry friends while you're away!"
+      },
+      "roles": [
+        "user",
+        "sitter"
+      ],
+      "pets": [],
+      "sitterInfo": {
+        "services": [
+          "stay",
+          "feed"
+        ],
+        "ratings": [
+          {
+            "id": 1,
+            "rating": 5,
+            "comment": "Jane did an amazing job taking care of my cat. Highly recommended!",
+            "userId": 1
+          },
+          {
+            "id": 2,
+            "rating": 4,
+            "comment": "Great communication and my dog loved her. Will book again.",
+            "userId": 3
+          },
+          {
+            "id": 3,
+            "rating": 3,
+            "comment": "Very reliable sitter. Happy with the service provided.",
+            "userId": 4
+          }
+        ],
+        "unavailability": [
+          {
+            "id": 1,
+            "date": "2024-07-10"
+          },
+          {
+            "id": 2,
+            "date": "2024-07-15"
+          },
+          {
+            "id": 3,
+            "date": "2024-07-20"
+          },
+          {
+            "id": 4,
+            "date": "2024-07-25"
+          },
+          {
+            "id": 5,
+            "date": "2024-07-30"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "username": "samBrown",
+      "password": "securePassword789",
+      "basicInfo": {
+        "name": "Sam",
+        "surname": "Brown",
+        "email": "sam@example.com",
+        "telephone": "+1122334455",
+        "location": "Chicago",
+        "photo": "https://img.freepik.com/darmowe-zdjecie/androgyniczny-awatar-nie-binarnej-osoby-queer_23-2151100205.jpg?t=st=1719615050~exp=1719618650~hmac=889757b853b51a55abfdd97d3ab49ff9022b8a166e476c118e48bd2195d6a0c0&w=996",
+        "description": "Hey, I'm Sam! I've been caring for pets of all shapes and sizes for years. I'm passionate about providing the best care possible for your furry companions. Your pets will be safe, happy, and loved while you're away. Let's ensure they have a fantastic time together!"
+      },
+      "roles": [
+        "user",
+        "sitter"
+      ],
+      "pets": [],
+      "sitterInfo": {
+        "services": [
+          "stay",
+          "walk",
+          "feed"
+        ],
+        "ratings": [
+          {
+            "id": 1,
+            "rating": 3,
+            "comment": "Sam is excellent with pets. My dog was really comfortable with him.",
+            "userId": 2
+          },
+          {
+            "id": 2,
+            "rating": 4,
+            "comment": "Responsive and reliable sitter. Will book again.",
+            "userId": 4
+          },
+          {
+            "id": 3,
+            "rating": 5,
+            "comment": "Great service. Sam took good care of my cat while I was away.",
+            "userId": 5
+          }
+        ],
+        "unavailability": [
+          {
+            "id": 1,
+            "date": "2024-07-05"
+          },
+          {
+            "id": 2,
+            "date": "2024-07-08"
+          },
+          {
+            "id": 3,
+            "date": "2024-07-11"
+          },
+          {
+            "id": 4,
+            "date": "2024-07-16"
+          },
+          {
+            "id": 5,
+            "date": "2024-07-19"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "username": "emilyDavis",
+      "password": "securePassword987",
+      "basicInfo": {
+        "name": "Emily",
+        "surname": "Davis",
+        "email": "emily@example.com",
+        "telephone": "+3344556677",
+        "location": "San Francisco",
+        "photo": "https://img.freepik.com/darmowe-zdjecie/szczesliwa-mloda-biala-kobieta-portret-na-bialym-tle-azjatycka-zakupy-w-czarnym-garderoba-na-wakacje-happy-shopaholic-kupic-portret-makijaz-szczesliwy-czlowiek-koncept-gorskich-pokladow-i-uroda_155003-21460.jpg?size=626&ext=jpg",
+        "description": "Hi there! I'm Emily, a dedicated pet sitter with a love for animals. I provide personalized care and attention to each pet I look after. Your furry friends will be in safe hands with me. I ensure they receive the love, exercise, and playtime they need. Let's make your pets' time away from home stress-free and enjoyable!"
+      },
+      "roles": [
+        "user",
+        "sitter"
+      ],
+      "pets": [],
+      "sitterInfo": {
+        "services": [
+          "stay",
+          "walk",
+          "feed"
+        ],
+        "ratings": [
+          {
+            "id": 1,
+            "rating": 5,
+            "comment": "Emily was fantastic with my dog. Highly recommend her services!",
+            "userId": 1
+          },
+          {
+            "id": 2,
+            "rating": 4,
+            "comment": "Emily provided great care for my cat while I was away.",
+            "userId": 2
+          },
+          {
+            "id": 3,
+            "rating": 5,
+            "comment": "Reliable and caring sitter. Emily took excellent care of my pets.",
+            "userId": 5
+          }
+        ],
+        "unavailability": [
+          {
+            "id": 1,
+            "date": "2024-07-03"
+          },
+          {
+            "id": 2,
+            "date": "2024-07-06"
+          },
+          {
+            "id": 3,
+            "date": "2024-07-09"
+          },
+          {
+            "id": 4,
+            "date": "2024-07-12"
+          },
+          {
+            "id": 5,
+            "date": "2024-07-18"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5",
+      "username": "michaelWilson",
+      "password": "securePassword789",
+      "basicInfo": {
+        "name": "Michael",
+        "surname": "Wilson",
+        "email": "michael@example.com",
+        "telephone": "+9988776655",
+        "location": "Houston",
+        "photo": "https://img.freepik.com/darmowe-zdjecie/portret-mezczyzny-w-stylu-kreskowki_23-2151134160.jpg?t=st=1719615116~exp=1719618716~hmac=03bd904329e7b9b72e43be5af32c93e179dc35dca2bbb1dbd7c33f4c1c8af118&w=996",
+        "description": "Hello, I'm Michael, an experienced pet sitter dedicated to providing the best care for your pets. I ensure they feel comfortable, loved, and entertained while you're away. Whether it's feeding, walking, or playing with your pets, I'm here to give them the attention they deserve. Let's make sure your pets have a great time under my care!"
+      },
+      "roles": [
+        "user",
+        "sitter"
+      ],
+      "pets": [],
+      "sitterInfo": {
+        "services": [
+          "walk",
+          "feed"
+        ],
+        "ratings": [
+          {
+            "id": 1,
+            "rating": 5,
+            "comment": "Michael is a wonderful sitter. My cat loved him!",
+            "userId": 1
+          },
+          {
+            "id": 2,
+            "rating": 5,
+            "comment": "Very pleased with Michael's service. Will book again.",
+            "userId": 3
+          }
+        ],
+        "unavailability": [
+          {
+            "id": 1,
+            "date": "2024-07-04"
+          },
+          {
+            "id": 2,
+            "date": "2024-07-07"
+          },
+          {
+            "id": 3,
+            "date": "2024-07-13"
+          },
+          {
+            "id": 4,
+            "date": "2024-07-17"
+          },
+          {
+            "id": 5,
+            "date": "2024-07-22"
+          }
+        ]
+      }
+    },
+    {
+      "id": "6",
+      "username": "oliviaWhite",
+      "password": "securePassword246",
+      "basicInfo": {
+        "name": "Olivia",
+        "surname": "White",
+        "email": "olivia@example.com",
+        "telephone": "+6655443322",
+        "location": "Miami",
+        "photo": "https://img.freepik.com/darmowe-wektory/recznie-rysowane-ilustracja-kreskowka-profil-boczny_23-2150517168.jpg?t=st=1719615180~exp=1719618780~hmac=67aa4e60b18d409f024c8214f846d073991de46a0c2c68e69a090f49181e0031&w=996",
+        "description": "Hi! I'm Olivia, a dedicated pet sitter with a love for animals. I've cared for pets of all kinds and sizes, ensuring they receive the best care possible. Your pets will be in safe hands with me. I provide personalized attention, ensuring your pets are happy, healthy, and loved while you're away. Let's make sure your pets have a fantastic time under my care!"
+      },
+      "roles": [
+        "user",
+        "sitter"
+      ],
+      "pets": [],
+      "sitterInfo": {
+        "services": [
+          "stay",
+          "walk",
+          "feed"
+        ],
+        "ratings": [
+          {
+            "id": 1,
+            "rating": 5,
+            "comment": "Olivia did a wonderful job caring for my dog. Highly recommend her!",
+            "userId": 2
+          },
+          {
+            "id": 2,
+            "rating": 1,
+            "comment": "No comment.",
+            "userId": 4
+          }
+        ],
+        "unavailability": [
+          {
+            "id": 1,
+            "date": "2024-07-14"
+          },
+          {
+            "id": 2,
+            "date": "2024-07-21"
+          },
+          {
+            "id": 3,
+            "date": "2024-07-23"
+          },
+          {
+            "id": 4,
+            "date": "2024-07-26"
+          },
+          {
+            "id": 5,
+            "date": "2024-07-29"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7",
       "username": "janeDoe",
       "password": "anotherSecurePassword",
       "basicInfo": {
@@ -167,135 +493,63 @@
       }
     },
     {
-      "id": "3",
-      "username": "aliceSmith",
-      "password": "yetAnotherSecurePassword",
+      "id": "7",
+      "username": "sophiaTaylor",
+      "password": "securePassword135",
       "basicInfo": {
-        "name": "Alice",
-        "surname": "Smith",
-        "email": "alice@example.com",
-        "telephone": "+123098456",
-        "location": "Chicago",
-        "photo": "https://img.freepik.com/darmowe-wektory/portret-usmiechnietej-mlodej-dziewczyny_1308-166167.jpg?t=st=1718655891~exp=1718659491~hmac=622c98c2e30bf14daf4d1b5d95ce45a7728526c0a00c2ac0ad2c5b2afc44339b&w=996",
-        "description": "test test test test description"
-      },
-      "roles": [
-        "user"
-      ],
-      "pets": [
-        {
-          "id": 4,
-          "name": "Charlie",
-          "type": "cat",
-          "size": "medium",
-          "age": 1,
-          "description": "Playful kitten.",
-          "knownCommands": [],
-          "frequencyOfWalksNeeded": "none",
-          "typeOfActivity": "low"
-        },
-        {
-          "id": 5,
-          "name": "Nibbles",
-          "type": "caged",
-          "size": "medium",
-          "age": 2,
-          "description": "Active hamster.",
-          "knownCommands": [],
-          "frequencyOfWalksNeeded": "none",
-          "typeOfActivity": "low"
-        }
-      ],
-      "sitterInfo": {
-        "services": [],
-        "ratings": [],
-        "unavailability": []
-      }
-    },
-    {
-      "id": "edae8d50-0426-a8cb-d200-a760578e8a8a",
-      "username": "",
-      "password": "",
-      "basicInfo": {
-        "name": "",
-        "surname": "",
-        "email": "",
-        "telephone": "",
-        "location": "",
-        "photo": "",
-        "description": "opis"
-      },
-      "roles": [
-        "user"
-      ],
-      "sitterInfo": {
-        "services": []
-      }
-    },
-    {
-      "id": "94ad34c1-6651-67d9-f023-5f2ad06f7bde",
-      "username": "",
-      "password": "",
-      "basicInfo": {
-        "name": "",
-        "surname": "",
-        "email": "",
-        "telephone": "",
-        "location": "",
-        "photo": "",
-        "description": ""
-      },
-      "roles": [
-        "user"
-      ],
-      "sitterInfo": {
-        "services": []
-      }
-    },
-    {
-      "id": "f72c5d13-6272-ee47-f827-b0b72da505b8",
-      "username": "",
-      "password": "",
-      "basicInfo": {
-        "name": "",
-        "surname": "",
-        "email": "",
-        "telephone": "",
-        "location": "",
-        "photo": "",
-        "description": ""
+        "name": "Sophia",
+        "surname": "Taylor",
+        "email": "sophia@example.com",
+        "telephone": "+1122334455",
+        "location": "Seattle",
+        "photo": "https://img.freepik.com/darmowe-zdjecie/szczesliwa-mloda-biala-kobieta-portret-na-bialym-tle-azjatycka-zakupy-w-czarnym-garderoba-na-wakacje-happy-shopaholic-kupic-portret-makijaz-szczesliwy-czlowiek-koncept-gorskich-pokladow-i-uroda_155003-21460.jpg?size=626&ext=jpg",
+        "description": "Hello, I'm Sophia! I have a deep passion for animals and have been caring for pets for several years. I ensure your pets receive the best care, attention, and love while you're away. Whether it's feeding, walking, or just keeping them company, I'm committed to providing a stress-free experience for both you and your pets!"
       },
       "roles": [
         "user",
         "sitter"
       ],
-      "sitterInfo": {
-        "services": []
-      }
-    },
-    {
-      "id": "4e008323-b00c-6686-98f0-4354787ad356",
-      "username": "testuser",
-      "password": "test",
-      "basicInfo": {
-        "name": "Nowy",
-        "surname": "User",
-        "email": "test@gmai.com",
-        "telephone": "601234567",
-        "location": "Miasto",
-        "photo": "",
-        "description": "Chce zobaczyc czy sie wyswietli"
-      },
-      "roles": [
-        "user",
-        "sitter"
-      ],
+      "pets": [],
       "sitterInfo": {
         "services": [
           "stay",
-          "walk",
-          "take",
-          "feed"
+          "walk"
+        ],
+        "ratings": [
+          {
+            "id": 1,
+            "rating": 5,
+            "comment": "Sophia is a fantastic sitter. My dog was so happy under her care!",
+            "userId": 2
+          },
+          {
+            "id": 2,
+            "rating": 4,
+            "comment": "Very pleased with Sophia's service. She took great care of my cat.",
+            "userId": 4
+          }
+        ],
+        "unavailability": [
+          {
+            "id": 1,
+            "date": "2024-08-05"
+          },
+          {
+            "id": 2,
+            "date": "2024-08-10"
+          },
+          {
+            "id": 3,
+            "date": "2024-08-15"
+          },
+          {
+            "id": 4,
+            "date": "2024-08-20"
+          },
+          {
+            "id": 5,
+            "date": "2024-08-25"
+          }
         ]
       }
     }
@@ -305,36 +559,204 @@
       "id": "1",
       "text": "Excellent sitter! Took great care of my dog.",
       "rate": 5,
-      "sitterId": 1,
-      "userId": 2,
+      "sitterId": "1",
+      "userId": "2",
       "date": "2023-06-01"
     },
     {
       "id": "2",
       "text": "Very good, but a bit late for the appointment.",
       "rate": 4,
-      "sitterId": 1,
-      "userId": 3,
+      "sitterId": "1",
+      "userId": "3",
       "date": "2023-06-10"
     },
     {
       "id": "3",
       "text": "Jane was fantastic with my dog.",
       "rate": 5,
-      "sitterId": 2,
-      "userId": 1,
+      "sitterId": "2",
+      "userId": "1",
       "date": "2023-07-01"
     },
     {
       "id": "4",
       "text": "Great sitter, very attentive, but hard to keep in touch. :(",
       "rate": 3,
-      "sitterId": 2,
-      "userId": 3,
+      "sitterId": "2",
+      "userId": "3",
       "date": "2023-08-15"
+    },
+    {
+      "id": "5",
+      "text": "Awesome service! My pets loved their time with John.",
+      "rate": 5,
+      "sitterId": "1",
+      "userId": "4",
+      "date": "2023-09-05"
+    },
+    {
+      "id": "6",
+      "text": "Samantha took great care of my cat. Highly recommended!",
+      "rate": 5,
+      "sitterId": "3",
+      "userId": "2",
+      "date": "2023-09-15"
+    },
+    {
+      "id": "7",
+      "text": "Good experience overall. Will use their services again.",
+      "rate": 4,
+      "sitterId": "4",
+      "userId": "1",
+      "date": "2023-10-01"
+    },
+    {
+      "id": "8",
+      "text": "Decent sitter. Could improve on communication.",
+      "rate": 3,
+      "sitterId": "5",
+      "userId": "2",
+      "date": "2023-10-15"
+    },
+    {
+      "id": "9",
+      "text": "Not satisfied with the service provided. Would not recommend.",
+      "rate": 2,
+      "sitterId": "6",
+      "userId": "4",
+      "date": "2023-11-01"
+    },
+    {
+      "id": "10",
+      "text": "Outstanding service! My dog was so happy with Mark.",
+      "rate": 5,
+      "sitterId": "3",
+      "userId": "1",
+      "date": "2023-11-15"
+    },
+    {
+      "id": "11",
+      "text": "Average experience. Could be more attentive to details.",
+      "rate": 3,
+      "sitterId": "7",
+      "userId": "2",
+      "date": "2023-12-01"
+    },
+    {
+      "id": "12",
+      "text": "Had a great experience with Peter. Highly recommended!",
+      "rate": 5,
+      "sitterId": "4",
+      "userId": "3",
+      "date": "2024-01-01"
+    },
+    {
+      "id": "13",
+      "text": "Disappointing service. Not professional at all.",
+      "rate": 1,
+      "sitterId": "8",
+      "userId": "1",
+      "date": "2024-02-01"
+    },
+    {
+      "id": "14",
+      "text": "Very reliable sitter. Took great care of my rabbit!",
+      "rate": 4,
+      "sitterId": "2",
+      "userId": "3",
+      "date": "2024-03-01"
+    },
+    {
+      "id": "15",
+      "text": "Sarah was wonderful with my cats. Will hire her again.",
+      "rate": 5,
+      "sitterId": "5",
+      "userId": "4",
+      "date": "2024-04-01"
+    },
+    {
+      "id": "16",
+      "text": "Could be more punctual. Overall, not bad.",
+      "rate": 3,
+      "sitterId": "6",
+      "userId": "2",
+      "date": "2024-05-01"
+    },
+    {
+      "id": "17",
+      "text": "Exceptional service! Will recommend to friends.",
+      "rate": 5,
+      "sitterId": "7",
+      "userId": "1",
+      "date": "2024-06-01"
+    },
+    {
+      "id": "18",
+      "text": "Average experience. Expected more for the price.",
+      "rate": 3,
+      "sitterId": "8",
+      "userId": "3",
+      "date": "2024-07-01"
+    },
+    {
+      "id": "19",
+      "text": "Emma was very caring with my elderly dog. Thank you!",
+      "rate": 4,
+      "sitterId": "1",
+      "userId": "4",
+      "date": "2024-08-01"
+    },
+    {
+      "id": "20",
+      "text": "Jack was great with my high-energy dog. Impressed!",
+      "rate": 5,
+      "sitterId": "2",
+      "userId": "1",
+      "date": "2024-09-01"
+    },
+    {
+      "id": "21",
+      "text": "Poor communication. Didn't feel informed about my pet.",
+      "rate": 2,
+      "sitterId": "3",
+      "userId": "2",
+      "date": "2024-10-01"
+    },
+    {
+      "id": "22",
+      "text": "Outstanding service! Couldn't ask for more.",
+      "rate": 5,
+      "sitterId": "4",
+      "userId": "3",
+      "date": "2024-11-01"
+    },
+    {
+      "id": "23",
+      "text": "Lisa was excellent with my cats. Will book again!",
+      "rate": 5,
+      "sitterId": "5",
+      "userId": "4",
+      "date": "2024-12-01"
+    },
+    {
+      "id": "24",
+      "text": "Not satisfied with the service. My pet came back stressed.",
+      "rate": 2,
+      "sitterId": "6",
+      "userId": "1",
+      "date": "2025-01-01"
+    },
+    {
+      "id": "25",
+      "text": "Paul was friendly, but didn't follow instructions well.",
+      "rate": 3,
+      "sitterId": "7",
+      "userId": "2",
+      "date": "2025-02-01"
     }
   ],
-  "appointments": [
+"appointments": [
     {
       "id": "1",
       "sitterId": 1,

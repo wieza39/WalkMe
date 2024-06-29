@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, {Suspense, useContext, useState} from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SearchBox from "../components/search/marketplace/SearchBox";
@@ -6,11 +6,12 @@ import "../assets/sass/searchMarket.css";
 import ServiceContext from "../components/search/ServiceContext";
 import SearchResults from "../components/search/marketplace/SearchResults";
 import useFetch from "../components/hooks/useFetch";
+import Loading from "../components/elements/Loading";
 
 export default function Search() {
     const [filteredSitters, setFilteredSitters] = useState([]);
-    const { error, isPending, data: users } = useFetch('http://localhost:8000/users');
-    const { state: { location, startDate, endDate, serviceSelected } } = useContext(ServiceContext);
+    const {error, isPending, data: users} = useFetch('http://localhost:8000/users');
+    const {state: {location, startDate, endDate, serviceSelected}} = useContext(ServiceContext);
 
     const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
 
@@ -43,8 +44,10 @@ export default function Search() {
         <>
             <Navbar/>
             <div className="search-container">
-                <SearchBox onSearch={handleSearch} />
-                <SearchResults availableSitters={filteredSitters} />
+                <SearchBox onSearch={handleSearch}/>
+                <Suspense fallback={<Loading/>}>
+                    <SearchResults availableSitters={filteredSitters}/>
+                </Suspense>
             </div>
             <Footer/>
         </>
