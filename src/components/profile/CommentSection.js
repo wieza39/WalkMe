@@ -49,8 +49,8 @@ export default function CommentSection({ sitterId }) {
 
     const commentsWithUsers = useMemo(() => {
         return comments.map(comment => {
-            const user = users.find(user => String(user.id) === String(comment.userId));
-            return { ...comment, user };
+            const userComment = users.find(user => String(user.id) === String(comment.userId));
+            return { ...comment, user: userComment };
         });
     }, [comments, users]);
 

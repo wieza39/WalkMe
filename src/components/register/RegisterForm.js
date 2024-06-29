@@ -3,6 +3,7 @@ import {PhotoIcon, UserCircleIcon} from '@heroicons/react/24/solid'
 import Switch from '@mui/material/Switch';
 import uuid from 'react-uuid';
 import { useNavigate } from 'react-router-dom';
+import {Avatar} from "@mui/material";
 
 
 export default function RegisterForm() {
@@ -14,7 +15,7 @@ export default function RegisterForm() {
     const [email, setEmail] = useState('');
     const [telephone, setTelephone] = useState('');
     const [location, setLocation] = useState('');
-    const [photo, setPhoto] = useState('');
+    const [photo, setPhoto] = useState('https://i.pinimg.com/280x280_RS/30/55/f1/3055f198157a985ec302ee02dfac37a7.jpg');
     const [description, setDescription] = useState('');
     const [roles, setRoles] = useState(['user']);
     const [pets, setPets] = useState([]);

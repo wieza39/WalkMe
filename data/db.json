@@ -552,6 +552,33 @@
           }
         ]
       }
+    },
+    {
+      "id": "897d568e-2d5e-5f14-3e7b-94ef43e431e0",
+      "username": "test",
+      "password": "test",
+      "basicInfo": {
+        "name": "adsads",
+        "surname": "dsaasd",
+        "email": "test@gm.com",
+        "telephone": "60189333333",
+        "location": "adsads",
+        "photo": "https://i.pinimg.com/280x280_RS/30/55/f1/3055f198157a985ec302ee02dfac37a7.jpg",
+        "description": "dsadasdasdasdas"
+      },
+      "roles": [
+        "user",
+        "sitter"
+      ],
+      "pets": [],
+      "sitterInfo": {
+        "services": [
+          "stay",
+          "take"
+        ],
+        "ratings": [],
+        "unavailability": []
+      }
     }
   ],
   "comments": [
@@ -756,7 +783,7 @@
       "date": "2025-02-01"
     }
   ],
-"appointments": [
+  "appointments": [
     {
       "id": "1",
       "sitterId": 1,

@@ -48,9 +48,16 @@ export default function Hero() {
                         ))}
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                        { !loggedUser ? (
                         <a href="./sign-in" className="text-sm font-semibold leading-6 text-gray-900">
                             Zaloguj się <span aria-hidden="true">&rarr;</span>
                         </a>
+
+                        ) : (
+                            <a href="/" className="text-sm font-semibold leading-6 text-gray-900" onClick={e => window.localStorage.clear()}>
+                                Wyloguj się <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        )}
                     </div>
                 </nav>
                 <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
